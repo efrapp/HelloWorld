@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;
+			charset=utf-8" >
+		<meta name="viewport" id="viewport" 
+			content="width=device-width, height=device-height,
+			initial-scale=1.0, maximun-scale=1.0, 
+			user-scalable=no;" />
+		
+		<script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			
+			function onBodyLoad(){
+				document.addEventListener("deviceready", onDeviceReady, false);
+				
+			}
+			
+			function onDeviceReady(){
+				
+				//Get the appInfo DOM element
+				var element = document.getElementById('appInfo');
+				//replace it with specific information about the device
+				//running the application
+				element.innerHTML = 'PhoneGap (version' +
+						device.cordova + ')<br />' + device.platform + ' ' +
+						device.name + ' (version ' + device.version + ').';
+				//navigator.notification.alert("PhoneGap is ready!");
+			}
+		
+		</script>
+	</head>
+	
+	<body onload="onBodyLoad()">
+		<h1> HelloWorld3</h1>
+		<p id="appInfo">Waiting for PhoneGap Initialization to complete</p>
+	</body>
+</html>
